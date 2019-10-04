@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+<!-- {% block head_title %} {{title}} {% endblock %} -->
+
+{%block content %}
+<h1>Home</h1>
+{% if user.is_authenticated %}
+<p>Hello {{user}}</p>
+{% for a in list %}
+<li>{{ a }}</li>
+{% endfor %}
+{% endif %}
+{%endblock%}
+
+{%block another_content %}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">Nothing1</div>
+        <div class="col-3">Nothing2</div>
+        <div class="col-3">Nothing3</div>
+    </div>
+</div>
+{% endif %}
+{%endblock%}
