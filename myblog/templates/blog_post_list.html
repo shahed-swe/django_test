@@ -2,12 +2,18 @@
 
 
 
-{% block content %}
+{% block another_content %}
     {% for object in object_list %}
-    <a href="{{object.slug}}">{{object.title}}</a>
-    <p>{{object.content}}</p>
-    <p>{{object.about}}</p>
-    <p>{{object.date}}</p>
-    <p>{{object.time}}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <a href="{{object.slug}}">{{object.title}}</a>
+                <p>{{object.content}}</p>
+                <p>{{object.about}}</p>
+                <p>{{object.date}}</p>
+                <p>{{object.time}}</p>
+            </div>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}
