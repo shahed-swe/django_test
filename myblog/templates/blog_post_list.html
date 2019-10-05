@@ -4,7 +4,7 @@
 
 {% block content %}
     {% for object in object_list %}
-    <h1>{{object.title}}</h1>
+    <a href="{{object.slug}}">{{object.title}}</a>
     <p>{{object.content}}</p>
     <p>{{object.about}}</p>
     <p>{{object.date}}</p>
