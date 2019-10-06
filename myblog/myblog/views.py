@@ -6,6 +6,7 @@ def home(request):
     return render(request, "home.html",{"title": "Home","list":['Html','CSS','Python','Java']})
 
 def contact(request):
+    print(request.POST)
     return render(request, "form.html",{"title":"Form"})
 
 def about(request):
