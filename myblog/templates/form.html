@@ -8,11 +8,9 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col col-lg-6">
-                    <h1>Contact us by the following</h1>
+                    <h1>{{title}}</h1>
                     <form method='POST' action='.'> {% csrf_token %}
-                        <input type="text" name="full_name" placeholder="exp. Shahed Talukder">
-                        <input type="email" name="email" placeholder="someone@example.com">
-                        <textarea name="content"></textarea>
+                        {{form.as_p}}
                         <button type="submit">Send</button>
                     </form>
                 </div>
