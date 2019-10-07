@@ -33,5 +33,5 @@ urlpatterns = [
     # re_path(r'blog/(?P<post_id>\d+)/$', blog_post_detail_page),
     path('contact/',contact),
     path('about/',about),
-    path('nt1_place/', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]
