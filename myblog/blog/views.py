@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 # Create your views here.
 from .models import BlogPost
-from .forms import BlogPostForm
+from .forms import BlogPostModelForm
 
 # def blog_post_detail_page(request,post_slug):
 #     obj = get_object_or_404(BlogPost, slug=post_slug)
@@ -33,11 +33,11 @@ def blog_post_list_view(request):
 def blog_post_create_view(request):
     #create objects
     # ? use a form
-    form = BlogPostForm(request.POST or None)
+    form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
         print(form.cleaned_data)
-        obj = BlogPost.objects.create(**form.cleaned_data)
-        form = BlogPostForm()
+        form.save()
+        form = BlogPostModelForm()
     template_name = 'form.html'
     context = {"title":"New blog",'form': form}
     return render(request, template_name, context)

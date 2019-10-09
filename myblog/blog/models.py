@@ -3,7 +3,7 @@ import time as t
 # Create your models here.
 class BlogPost(models.Model):
     slug = models.SlugField(blank=False, unique=True) 
-    title = models.TextField()
+    title = models.CharField(max_length=120)
     content = models.TextField(null = True,blank=True)
     about = models.TextField(null=True)
     time = models.TimeField()
