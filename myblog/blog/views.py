@@ -3,6 +3,8 @@ from django.http import Http404
 # Create your views here.
 from .models import BlogPost
 from .forms import BlogPostModelForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 # def blog_post_detail_page(request,post_slug):
 #     obj = get_object_or_404(BlogPost, slug=post_slug)
@@ -30,6 +32,8 @@ def blog_post_list_view(request):
     context = {'object_list':qs}
     return render(request, template_name, context)
 
+# @login_required
+@staff_member_required
 def blog_post_create_view(request):
     #create objects
     # ? use a form

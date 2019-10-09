@@ -1,5 +1,6 @@
 from django import forms
 from .models import BlogPost
+from django.contrib.auth.decorators import login_required
 
 class BlogPostForm(forms.Form):
     slug = forms.SlugField()
@@ -23,7 +24,7 @@ class BlogPostModelForm(forms.ModelForm):
     
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
-        qs = BlogPost.objects.filter(title=title)
+        qs = BlogPost.objects.filter(title__iexact=title)
         if qs.exists():
             raise forms.ValidationError("Title is already exists in the database")
         return title
