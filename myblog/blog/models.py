@@ -1,7 +1,13 @@
 from django.db import models
+# from django.conf import settings
+
 import time as t
 # Create your models here.
+
+# User = settings.AUTH_USER_MODEL
+
 class BlogPost(models.Model):
+    # user = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)
     slug = models.SlugField(blank=False, unique=True) 
     title = models.CharField(max_length=120)
     content = models.TextField(null = True,blank=True)
