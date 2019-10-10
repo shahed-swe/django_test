@@ -7,11 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <a href="{{object.get_absolute_url}}">{{object.title}}</a>
-                <p>{{object.content}}</p>
-                <p>{{object.about}}</p>
-                <p>{{object.date}}</p>
-                <p>{{object.time}}</p>
+                {% include 'blog/list_inside.html' with blog_post=object %}
             </div>
         </div>
     </div>

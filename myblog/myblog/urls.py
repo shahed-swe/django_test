@@ -18,9 +18,11 @@ from django.urls import path, re_path, include
 from blog.views import(
     blog_post_create_view,
 )
+from contact.views import(
+    contact,
+)
 from .views import(
     home,
-    contact,
     about
 )
 
@@ -31,7 +33,7 @@ urlpatterns = [
     path('create_blog/',blog_post_create_view),
     path('blog/',include('blog.urls')),
     # re_path(r'blog/(?P<post_id>\d+)/$', blog_post_detail_page),
-    path('contact/',contact),
+    path('contact/',include('contact.urls')),
     path('about/',about),
     path('admin/', admin.site.urls),
 ]

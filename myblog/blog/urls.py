@@ -4,15 +4,12 @@ from blog.views import(
     blog_post_list_view,
     blog_post_update_view,
     blog_post_delete_view,
-    blog_post_create_view
 )
 
 urlpatterns = [
 
     path('',blog_post_list_view),
-    path('create_blog/',blog_post_create_view),
     path('<str:post_slug>/',blog_post_detail_view),
     path('<str:post_slug>/edit',blog_post_update_view),
     path('<str:post_slug>/delete',blog_post_delete_view),
-
 ]

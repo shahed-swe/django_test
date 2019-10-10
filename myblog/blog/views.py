@@ -39,7 +39,6 @@ def blog_post_create_view(request):
     # ? use a form
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data)
         form.save()
         form = BlogPostModelForm()
     template_name = 'form.html'
