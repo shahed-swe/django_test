@@ -15,3 +15,12 @@ class BlogPost(models.Model):
     time = models.TimeField()
     date = models.DateField()
     select = models.CharField(null = True,max_length=256, choices=[('Model Feed', 'Model Feed'),('News Feed', 'News Feed'),('Other Feed','Other Feed')])
+
+    def get_absolute_url(self):
+        return f"/blog/{self.slug}"
+
+    def get_edit_url(self):
+        return f"{self.get_absolute_url()}/edit"
+    
+    def get_delete_url(self):
+        return f"{self.get_absolute_url()}/delete"

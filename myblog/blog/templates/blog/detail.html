@@ -6,4 +6,12 @@
     <p>{{object.about}}</p>
     <p>{{object.date}}</p>
     <p>{{object.time}}</p>
+
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
+            <a href='{{object.get_edit_url}}'>Edit</a>
+            <a href='{{object.get_delete_url}}'>Delete</a>
+        {% endif %}
+    {% endif %}
+
 {%endblock%}
