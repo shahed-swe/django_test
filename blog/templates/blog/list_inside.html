@@ -1,1 +1,11 @@
-<li><a href="{{object.get_absolute_url}}">{{object.title}}</a></li>
+<div class="card mb-4">
+  <div class="card-body">
+      <h2 class="card-title">{{ object.title }}</h2>
+      <p class="card-text text-muted h6">{{ object.time }} | {{ object.date}} </p>
+      <p class="card-text">{{object.content|slice:":200" }}</p>
+      <a href="{{object.get_absolute_url}}" class="btn btn-primary">Read More &rarr;</a>
+  </div>
+</div>
+
+
+  

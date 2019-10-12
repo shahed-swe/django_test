@@ -1,7 +1,7 @@
 from django.db import models
 # from django.conf import settings
 
-import time as t
+
 # Create your models here.
 
 # User = settings.AUTH_USER_MODEL
